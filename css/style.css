@@ -1,0 +1,270 @@
+html {
+  height: 100%;
+}
+
+body { 
+  min-height: 100%;
+  margin: 0;
+
+  font-family: Lato, Sans-Serif;
+  font-weight: 300;
+
+  display: grid;
+  grid-template-columns: auto [content-start main-content-start] 700px [main-content-end right-sidebar-start] 260px [right-sidebar-end content-end] auto;
+  grid-template-rows: 50px max-content 50px;
+  grid-template-areas:  ". nav nav ."
+                        ". main main ."
+                        ". footer footer .";
+  grid-row-gap: 10px;
+}
+
+nav {
+  grid-area: nav;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: #333;
+}
+
+nav > a {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  color: #fff;
+
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav > a:hover{
+ background-color: #111;
+}
+
+
+
+main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 490px max-content;
+
+  grid-template-areas: "keyword"
+                       "stories";
+
+  grid-row-gap: 10px;
+}
+
+
+#keyword {
+  grid-area: keyword;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 350px 50px 90px;
+  grid-template-areas: " . "
+                       "hero"
+                       "text";
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#keyword > img {
+  width: 100%;
+
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  align-self: start;
+}
+
+#keyword > div {
+  width: 100%;
+  height: 100%;
+
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  align-self: start;
+
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0.75)
+    );
+}
+
+#keyword > h1 {
+  align-self: end;
+  margin: 0 50px 0 50px;
+
+  font-weight: 300;
+  font-size: 250%;
+  color: #fff;
+  text-transform: uppercase;
+
+  grid-area: hero;
+}
+
+#keyword > p {
+  align-self: top;
+  margin: 0 50px 0 50px;
+
+  font-weight: 300;
+  font-size: 150%;
+  color: #fff;
+
+  grid-area: text;
+}
+
+#keyword > h1:before {
+  content: '';
+  display: block;
+
+  width: 0%;
+  border-bottom: 2px solid #fff;
+
+  transition: width .5s ease;
+}
+
+#keyword:hover > h1:before  {
+  width: 100%;
+}
+
+
+#stories {
+  grid-area: stories;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  justify-content: space-between;
+}
+
+.story {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 90px 40px 55px;
+  grid-template-areas: "."
+                      "hero"
+                      "text";
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.story > img {
+  width: 100%;
+
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  align-self: start;
+
+  overflow: hidden;
+}
+
+.story > div {
+  width: 100%;
+  height: 100%;
+
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  align-self: start;
+
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0.85)
+    );
+}
+
+.story > h1 {
+  align-self: end;
+  margin: 0 20px 0 20px;
+
+  font-weight: 300;
+  font-size: 125%;
+  text-transform: uppercase;
+  color: #fff;
+
+  grid-area: hero;
+}
+
+.story > p {
+  align-self: top;
+  margin: 0 20px 0 20px;
+
+  font-weight: 300;
+  font-size: 100%;
+  color: #fff;
+  grid-area: text;
+}
+
+.story > h1:before {
+  content: '';
+  display: block;
+
+  width: 0%;
+  border-bottom: 1px solid #fff;
+
+  transition: width .5s ease;
+}
+
+.story:hover > h1:before  {
+  width: 100%;
+}
+
+
+
+footer {
+  grid-area: footer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 400;
+
+  background-color: #333;
+  color: #fff;
+}
+
+footer > div {
+  display: flex;
+  align-self: stretch;
+
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  color: #fff;
+}
+
+footer > div > a {
+  display: flex;
+  align-self: stretch;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  color: #fff;
+
+  text-decoration: none;
+}
+
+footer > div > a:hover{
+ background-color: #111;
+}

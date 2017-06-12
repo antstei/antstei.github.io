@@ -1,0 +1,74 @@
+html {
+  height: 100%;
+}
+
+
+body {
+  min-height: 100%;
+  margin: 0;
+
+  display: grid;
+  
+  grid-template-rows: 50px max-content 50px;
+  grid-template-areas: ". nav nav ."
+                       ". main main ."
+                       ". footer footer .";
+
+  grid-row-gap: 10px;                   
+  grid-column-gap: 10px;                   
+}
+
+
+main {
+  grid-area: main;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+
+  grid-template-areas: "article"
+}
+
+main > article {
+  grid-area: article;
+
+  font-weight: 300;
+  font-size: 120%;
+}
+
+main > article  p, main > article blockquote,  main > article pre {
+  margin: 0 50px 10px 50px;
+}
+
+main > article h2 {
+  margin: 20px 50px 10px 50px;
+
+  font-weight: 400;
+  font-size: 120%;
+}
+
+main > article blockquote {
+  font-style: italic;
+
+  background: #f9f9f9;
+  border-left: 3px solid #ccc;
+
+  padding: 0.5em 10px;
+}
+
+main > article pre {
+  max-height: 400px;
+
+  color: #444;
+  background: #eee;
+
+  padding: 10px;
+  
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+  word-wrap: normal;
+  white-space: pre-wrap;
+  overflow: auto;
+}
