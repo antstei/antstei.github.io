@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <title>Strings in C</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+
+  <style>
+    .caption, .slide .shout::after, .cover {
+      background: #26b3e6 -webkit-linear-gradient(top left, #26b3e6 50%, #029fd9 50%) no-repeat;
+      background: #26b3e6 -o-linear-gradient(top left, #26b3e6 50%, #029fd9 50%) no-repeat;
+      background: #26b3e6 linear-gradient(to bottom right, #26b3e6 50%, #029fd9 50%) no-repeat;
+    }
+
+    .progress {
+      background: #029fd9;
+    }
+
+    .slide img {
+      height: 65%;
+      top: auto;
+
+      position: absolute;
+      left: 50%;
+
+      -webkit-transform: translate(-50%,0);
+      transform: translate(-50%,0);
+    }
+
+    .slide.cover img {
+      height: 100%;
+    }
+
+    .slide {
+      padding-top: 60px;
+    }
+
+    .slide::after {
+        content: none;
+    }
+    .slide a {
+        color: #e39301;
+    }
+
+    .slide li img {
+        max-height: 70%;
+    }
+
+    .caption p {
+      color: #fff;
+    }
+
+    .slide li, ul {
+      line-height: 1.2em;
+    }
+
+    .slide li + li, ul + ul {
+      padding-top: 15px;
+    }
+
+    .slide li ul {
+      padding-top: 10px;
+    }
+
+    .slide ul li + li {
+      padding-top: 7px;
+    }
+
+    .slide ul.ellipsis>li::before {
+      padding-right:.4em;
+      content: "…"
+    }
+
+    .cover h1 {
+      margin: 30px 0 0;
+      color: #fff;
+      text-align: center;
+      font-size: 60px;
+    }
+
+    .cover h2 {
+      margin: 30px 0 0;
+      color: #fff;
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .slide .cover {
+      max-height: unset;
+      opacity: 0.15;
+    }
+
+    .cover p {
+      margin-top: 30px;
+      text-align: center;
+      color :#fff;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    .badge {
+      text-align: center;
+    }
+
+    .badge a {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .slide blockquote + figcaption {
+      font-style: italic;
+      font-weight: inherit;
+      text-align: right;
+    }
+
+    .slide a, .slide a:link, .slide a:visited, .slide a:hover, .slide a:active
+    {
+      text-decoration: underline;
+      background: none;
+      color: inherit;
+    }
+
+    .caption a, .caption a:link, .caption a:visited, .caption a:hover, .caption a:active
+    {
+      text-decoration: none;
+      background: none;
+      color: #fff;
+    }
+
+    .slide blockquote {
+        line-height: 1.5em;
+    }
+
+    .slide li, .slide p {
+        hyphens: auto;
+        hyphenate-limit-chars: auto 3;
+        hyphenate-limit-lines: 4;
+      
+        -moz-hyphens: auto;
+        -moz-hyphenate-limit-chars: auto 3;
+        -moz-hyphenate-limit-lines: 4;
+        
+        -webkit-hyphens: auto;
+        -webkit-hyphenate-limit-chars: auto 3;
+        -webkit-hyphenate-limit-lines: 4;
+        
+        -ms-hyphens: auto;
+        -ms-hyphenate-limit-chars: auto 3;
+        -ms-hyphenate-limit-lines: 4;
+
+    }
+
+    .slide p {
+        line-height: 1.35em;
+    }
+
+    table {
+      width: 100%;
+      line-height: 1.35em;
+
+      border-collapse: separate;
+      border-spacing: 0 15px;
+    }
+
+    td.function {
+      width: 40%;
+    }
+
+    code {
+      font-size: 0.9em;
+    }
+
+}
+
+  </style>
+</head>
+
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Strings in C</h1>
+    <p><a href="https://antstei.github.io/teaching/PPS1">antstei.github.io/teaching/PPS1</a></p>
+  </header>
+
+  <section class="slide cover">
+    <h1>Strings in C</h1>
+    <h2><a href="https://antstei.github.io/teaching/PPS1">antstei.github.io/teaching/PPS1</a></h2>
+  </section>  
+  
+
+  <section class="slide">
+    <h2>Aufgabe 4</h2>
+    <p>Erstelle ein Programm, das einen beliebigen C-String an einen anderen anhängt und diesen neuen C-String anschließend ausgibt.</p>
+
+    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/FondPrizeLoops?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Strings in C … </h2>
+
+    <ul class="ellipsis">
+      <li class="next">können mit Funktionen der Standard-Headerdatei <code>string.h</code> (unter anderem) kopiert, zusammengefügt und verglichen werden: </li>
+    </ul>
+
+    <table class="striped next">
+      <tr>
+        <td class="function"><code>char* strcpy(s, cs)</code></td>
+        <td>C-String <code>cs</code> inklusive <code>\0</code> in Array <code>s</code> kopieren; liefert <code>s</code>.</td>
+      </tr>
+      
+      <tr>
+        <td class="function"><code>char* strcat(s, cs)</code></td>
+        <td>C-String <code>cs</code> hinten an die C-String <code>s</code> anhängen; liefert <code>s</code>.</td>
+      </tr>
+      
+      <tr>
+        <td class="function"><code>char* strlen(cs)</code></td>
+        <td>Liefert die Länge exklusive <code>\0</code> vom C-String <code>cs</code>.</td>
+      </tr>
+
+      <tr>
+        <td class="function"><code>…</code></td>
+        <td><a href="http://www.cplusplus.com/reference/cstring/" target="_blank">und noch viele mehr</a></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="slide">
+    <h2>Aufgabe 5</h2>
+
+    <p>Erstelle ein Programm, das einen beliebigen C-String einliest, diesen anschließend ab einer bestimmten Zeichenposition in ein anderes <code>char</code>-Array kopiert und dieses schließlich ausgibt.</p>
+
+    <iframe class="next" height="367px" width="100%" src="https://repl.it/repls/PalegreenBlandHypermedia?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Aufgabe 5½</h2>
+    
+    <p>Erstelle ein Programm, das einen beliebigen C-String einliest, diesen anschließend ohne führende Leerzeichen (<code> </code>) in ein anderes <code>char</code>-Array kopiert und dieses schließlich ausgibt.</p>
+
+    <iframe class="next" height="367px" width="100%" src="https://repl.it/repls/DownrightRealisticCells?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Strings in C … </h2>
+
+    <ul class="ellipsis">
+      <li class="next">können mit der Standardfunktion <code>scanf()</code> unter Verwendung des <i>Formatierungszeichens</i> <code>%s</code> bzw. <code>%Ns</code> eingelesen werden</li>
+      <li class="next">können mit der Standardfunktion <code>printf()</code> unter Verwendung des <i>Formatierungszeichens</i> <code>%s</code> ausgegben werden</li>
+    </ul>
+
+    <iframe class="next" height="342px" width="100%" src="https://repl.it/repls/AgonizingPuzzledGenre?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Aufgabe 6</h2>
+    
+    <p>Erstelle ein Programm, das einen beliebigen C-String einliest und anschließend die einzelnen Zeichen in umgekehrter Reihenfolge wieder ausgibt.</p>
+
+    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/HarmfulGiantMonad?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Aufgabe 6½</h2>
+    
+    <p>Erstelle ein Programm, das einen beliebigen C-String einliest, diesen anschließend umgekehrt in ein anderes <code>char</code>-Array kopiert und dieses schließlich ausgibt.</p>
+
+    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/BustlingHappyPattern?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout shrink">(☕-)Pause</h2>  
+  </section>
+
+  <footer class="badge">
+    <a href="https://antstei.github.io/teaching/PPS1">antstei.github.io/teaching/PPS1</a>
+  </footer>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+</body>
+</html>

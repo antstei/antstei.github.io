@@ -250,3 +250,151 @@ int main(void) {
 
   return 0;
 }
+
+
+/******************************************************/
+/*  https://repl.it/repls/PalegreenBlandHypermedia    */
+/*              Slide 13 – Assignment 5               */
+/******************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  /*declare two strings*/
+  char string_1[20] = {'\0'};
+  char string_2[20] = {'\0'};
+
+  int offset = 2;
+
+  /*get string_1*/
+  printf("You want to say:");
+  fgets(string_1, 20, stdin);
+
+  /*copy all chars with an index greater or equal than offset from
+  string_1 into string_2*/
+  strcpy(string_2, string_1 + offset);
+
+  /*output string*/
+  printf("\nI understood: %s", string_2);
+
+  return 0;
+}
+
+
+/******************************************************/
+/*   https://repl.it/repls/DownrightRealisticCells    */
+/*              Slide 14 – Assignment 5½              */
+/******************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  /*declare two strings*/
+  char string_1[20];
+  char string_2[20];
+
+  /*get string_1*/
+  printf("You want to say:");
+  fgets(string_1, 20, stdin);
+
+  /*trim all leading spaces of string_1,
+  i.e. copy all chars except the leading spaces from string_1 into string_2*/
+  int index = 0;
+  while (string_1[index] == ' ')
+  {
+    index += 1;
+  }
+
+  strcpy(string_2, string_1 + index);
+
+  /*output trimmed string_1, that is string_2*/
+  printf("I understood: %s", string_2);
+
+  return 0;
+}
+
+
+/******************************************************/
+/*    https://repl.it/repls/AgonizingPuzzledGenre     */
+/*                       Slide 15                     */
+/******************************************************/
+
+#include <stdio.h>
+
+int main(void)
+{
+  /*declare string*/
+  char our_string[20];
+  //char our_string[2];
+
+  /*get string*/
+  printf("You want to say:");
+  scanf("%s", our_string);
+  //scanf("%2s", our_string);
+
+  /*output string*/
+  printf("I understood: %s\n", our_string);
+  return 0;
+}
+
+
+/******************************************************/
+/*      https://repl.it/repls/HarmfulGiantMonad       */
+/*              Slide 16 – Assignment 6               */
+/******************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  /*declare string*/
+  char string_1[20];
+
+  /*get string_1*/
+  printf("You want to say:");
+  scanf("%19s", string_1);
+
+  /*output string*/
+  printf("\nI understood: %s", string_1);
+
+  /*output reversed version of string_1*/
+  printf("\nI reversed: ");
+  for (int index = 0; index < strlen(string_1); index++)
+  {
+    printf("%c", string_1[strlen(string_1) - index - 1]);
+  }
+
+  return 0;
+}
+
+
+/******************************************************/
+/*     https://repl.it/repls/BustlingHappyPattern     */
+/*              Slide 17 – Assignment 6½              */
+/******************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  /*declare two strings*/
+  char string_1[20];
+  char string_2[20];
+
+  /*get string_1*/
+  printf("You want to say:");
+  scanf("%19s", string_1);
+
+  /*create a reversed version of string_1, i.e. copy all chars from string_1 in reversed order into string_2*/
+  for (int index = 0; index <= strlen(string_1); index++)
+  {
+    string_2[index] = string_1[strlen(string_1) - index - 1];
+  }
+
+  /*output reversed version of string_1, that is string_2*/
+  printf("\nI understood: %s\n", string_2);
+
+  return 0;
+}

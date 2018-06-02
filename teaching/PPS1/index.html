@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de-AT">
 <head>
   <title>Strings in C</title>
   <meta charset="utf-8">
@@ -19,21 +19,6 @@
       background: #029fd9;
     }
 
-    .slide img {
-      height: 65%;
-      top: auto;
-
-      position: absolute;
-      left: 50%;
-
-      -webkit-transform: translate(-50%,0);
-      transform: translate(-50%,0);
-    }
-
-    .slide.cover img {
-      height: 100%;
-    }
-
     .slide {
       padding-top: 60px;
     }
@@ -45,20 +30,12 @@
         color: #e39301;
     }
 
-    .slide li img {
-        max-height: 70%;
-    }
-
     .caption p {
       color: #fff;
     }
 
-    .slide li, ul {
+    .slide li, .slide ul {
       line-height: 1.2em;
-    }
-
-    .slide li + li, ul + ul {
-      padding-top: 15px;
     }
 
     .slide li ul {
@@ -69,11 +46,9 @@
       padding-top: 7px;
     }
 
-    .slide ul.ellipsis>li::before {
-      padding-right:.4em;
-      content: "…"
+    .slide > ol > li + li {
+      padding-top: 14px;
     }
-
 
     .cover h1 {
       margin: 30px 0 0;
@@ -102,21 +77,6 @@
       line-height: 25px;
     }
 
-    .badge {
-      text-align: center;
-    }
-
-    .badge a {
-      margin-left: 0;
-      padding-left: 0;
-    }
-
-    .slide blockquote + figcaption {
-      font-style: italic;
-      font-weight: inherit;
-      text-align: right;
-    }
-
     .slide a, .slide a:link, .slide a:visited, .slide a:hover, .slide a:active
     {
       text-decoration: underline;
@@ -124,37 +84,28 @@
       color: inherit;
     }
 
-    .caption a, .caption a:link, .caption a:visited, .caption a:hover, .caption a:active
-    {
-      text-decoration: none;
-      background: none;
-      color: #fff;
-    }
+    .slide li, .slide p {
+        hyphens: auto;
+        hyphenate-limit-chars: auto 3;
+        hyphenate-limit-lines: 4;
+      
+        -moz-hyphens: auto;
+        -moz-hyphenate-limit-chars: auto 3;
+        -moz-hyphenate-limit-lines: 4;
+        
+        -webkit-hyphens: auto;
+        -webkit-hyphenate-limit-chars: auto 3;
+        -webkit-hyphenate-limit-lines: 4;
+        
+        -ms-hyphens: auto;
+        -ms-hyphenate-limit-chars: auto 3;
+        -ms-hyphenate-limit-lines: 4;
 
-    .slide blockquote {
-        line-height: 1.5em;
     }
 
     .slide p {
         line-height: 1.35em;
     }
-
-    table {
-      width: 100%;
-      line-height: 1.35em;
-
-      border-collapse: separate;
-      border-spacing: 0 15px;
-    }
-
-    td.function {
-      width: 40%;
-    }
-
-    code {
-      font-size: 0.9em;
-    }
-
 }
 
   </style>
@@ -173,112 +124,32 @@
   </section>  
 
   <section class="slide">
-    <h2>Strings in C … </h2>
+    <p>Übersicht der besprochenen Inhalte und zusätzlichen Übungsaufgaben</p>
 
-    <ul class="ellipsis">
-      <li class="next">sind Arrays vom Datentyp <code>char</code></li>
-      <li class="next">werden mit einem <code>\0</code> – dem Nullzeichen – terminiert</li>
-    </ul>
+    <ol>
+      <li><a href="./lesson_1.html" target="_blank">Erste Einheit, 28. Mai, drei Stunden</a>
+        <ul>
+          <li>Einführung in C-Strings,</li>
+          <li>Länge eines C-Strings bestimmen,</li>
+          <li>C-Strings mit <code>fgets()</code> einlesen und mit <code>fputs()</code> ausgeben,</li>
+          <li>nach bestimmte Zeichen in einem C-String suchen und</li>
+          <li>C-Strings kopieren.</li>
+        </ul>
+      </li>
 
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/VoluminousMindlessDemoware?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
+      <li><a href="./lesson_1.html" target="_blank">Zweite Einheit, 4. Juni, eine Stunde</a>
+        <ul>
+            <li>Zwei C-Strings aneinanderhängen,</li>
+            <li>Funktionen der Standard-Headerdatei <code>string.h</code></li>
+            <li>C-Strings ab einer bestimmten Zeichenposition kopieren,</li>
+            <li>C-Strings mit <code>scanf()</code> einlesen und mit <code>printf()</code> ausgeben</li>
+            <li>C-Strings umkehren.</li>
+          </ul>
+        </li>
+      </li>
 
-  <section class="slide">
-    <h2>Strings in C … </h2>
-
-    <ul class="ellipsis">
-      <li class="next">benötigen ein <code>char</code>-Array mit (mindestens) <i>Zeichenanzahl + 1</i> Elementen</li>
-      <li class="next">können mit einem String-Literal (<code>" … "</code>) initialisiert werden</li>
-    </ul>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/JovialTeemingFlashmemory?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-
-  <section class="slide">
-    <h2>Aufgabe 1</h2>
-    <p>Erstelle ein Programm, das die Länge eines beliebigen C-Strings ohne Nullzeichen ausgibt.</p>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/DarkredRapidApplication?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-
-  <section class="slide">
-    <h2>Strings in C … </h2>
-
-    <ul class="ellipsis">
-      <li class="next">können mit der Standardfunktion <code>fgets()</code> eingelesen werden</li>
-      <li class="next">können mit der Standardfunktion <code>fputs()</code> ausgegeben werden</li>
-    </ul>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/BonyCourageousCoolingfan?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-
-  <section class="slide">
-    <h2>Aufgabe 2</h2>
-    <p>Erstelle ein Programm, das die Position eines bestimmten Zeichens in einem beliebigen C-String ausgibt. Wir gehen davon aus, dass das zu suchende Zeichen im C-String enthalten ist.</p>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/GrowlingTealGames?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-  <section class="slide">
-    <h2>Aufgabe 2½</h2>
-    <p>Erstelle ein Programm, das die Position eines bestimmten Zeichens in einem beliebigen C-String ausgibt, sofern dieses im String enthalten ist.</p>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/ConcreteLazyDisc?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-
-  <section class="slide">
-    <h2 class="shout shrink">(☕-)Pause</h2>  
-  </section>
-  
-  <section class="slide">
-    <h2>Strings in C … </h2>
-
-    <ul class="ellipsis">
-      <li class="next">können <u>nicht</u> mit einem Zuweisungsoperator (<code>=</code>) kopiert werden</li>
-    </ul>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/ForkedLiquidLight?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-  <section class="slide">
-    <h2>Aufgabe 3</h2>
-    <p>Erstelle ein Programm, das einen beliebigen C-String in ein anderes <code>char</code>-Array kopiert und dieses anschließend ausgibt.</p>
-
-    <iframe class="next" height="400px" width="100%" src="https://repl.it/repls/LeadingHotpinkBases?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-  </section>
-
-  <section class="slide">
-    <h2>Strings in C … </h2>
-
-    <ul class="ellipsis">
-      <li class="next">können mit Funktionen der Standard-Headerdatei <code>string.h</code> (unter anderem) kopiert, zusammengefügt und verglichen werden: </li>
-    </ul>
-
-    <table class="striped next">
-      <tr>
-        <td class="function"><code>char* stcpy(s, cs)</code></td>
-        <td>C-String <code>cs</code> inklusive <code>\0</code> in Array <code>s</code> kopieren; liefert <code>s</code>.</td>
-      </tr>
-      
-      <tr>
-        <td class="function"><code>char* strcat(s, cs)</code></td>
-        <td>C-String <code>cs</code> hinten an die C-String <code>s</code> anhängen; liefert <code>s</code>.</td>
-      </tr>
-      
-      <tr>
-        <td class="function"><code>char* strlen(cs)</code></td>
-        <td>Liefert die Länge exklusive <code>\0</code> vom C-String <code>cs</code>.</td>
-      </tr>
-
-      <tr>
-        <td class="function"><code>…</code></td>
-        <td><a href="http://www.cplusplus.com/reference/cstring/" target="_blank">und noch viele mehr</a></td>
-      </tr>
-    </table>
+      <li><a href="./exercises.html" target="_blank">Übungsaufgaben</a></li>
+    </ol>
   </section>
 
   <footer class="badge">
