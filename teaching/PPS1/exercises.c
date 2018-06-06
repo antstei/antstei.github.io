@@ -212,8 +212,85 @@ int main(void)
 
 
 /******************************************************/
-/*     https://repl.it/repls/AgreeableCircularNasm    */
+/*     https://repl.it/repls/SkyblueSwiftExponent     */
 /*             Slide 8 – Exercises 4 a)               */
+/******************************************************/
+
+#include <stdio.h>
+//#include <string.h>
+
+int main(void)
+{ 
+  /*declare and initialize two strings*/
+  char our_string[] = "Rhinozeros";
+
+  /*compute length*/
+  int length = 0;
+  while (our_string[length] != '\0')
+  {
+    length += 1;
+  }
+
+  /*alternatively using string.h*/
+  //int length = strlen(our_string);
+
+  /*output last three chars of our_string*/
+  for (int index = length - 3; index < length; index++)
+  {
+      printf("%c", our_string[index]);
+  }
+
+  /*"jump" in next line*/
+  printf("\n");
+
+  return 0;
+}
+
+/******************************************************/
+/*  https://repl.it/repls/CoordinatedIntelligentChief  */
+/*             Slide 9 – Exercises 4 b)               */
+/******************************************************/
+
+#include <stdio.h>
+//#include <string.h>
+
+int main(void)
+{ 
+  /*declare and initialize two strings*/
+  char our_string[21];
+
+  /*get string*/
+  printf("You want to say:");
+  scanf("%s", our_string);
+  
+  /*compute length*/
+  int length = 0;
+  while (our_string[length] != '\0')
+  {
+    length += 1;
+  }
+
+  /*alternatively using string.h*/
+  //int length = strlen(our_string);
+
+  /*output last four chars of our_string*/
+  if (length > 6)
+  {
+    for (int index = 0; index < 4; index++)
+    {
+        printf("%c", our_string[index]);
+    }
+
+    /*"jump" in next line*/
+    printf("\n");
+  }
+
+  return 0;
+}
+
+/******************************************************/
+/*     https://repl.it/repls/AgreeableCircularNasm    */
+/*            Slide 10 – Exercises 5 a)               */
 /******************************************************/
 
 #include <stdio.h>
@@ -243,7 +320,7 @@ int main(void) {
 
 /******************************************************/
 /*     https://repl.it/repls/AuthorizedAntiqueCad     */
-/*             Slide 9 – Exercises 4 b)               */
+/*            Slide 10 – Exercises 5 b)               */
 /******************************************************/
 
 #include <stdio.h>
