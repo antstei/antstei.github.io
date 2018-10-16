@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fachdidaktik Programmieren, Algorithmen & Datenstrukturen</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+  
+  <style>
+    .caption, .slide .shout::after, .cover {
+      background: #e39301 -webkit-linear-gradient(top left, #e39301 50%, #d18700 50%) no-repeat;
+      background: #e39301 -o-linear-gradient(top left, #e39301 50%, #d18700 50%) no-repeat;
+      background: #e39301 linear-gradient(to bottom right, #e39301 50%, #d18700 50%) no-repeat;
+    }
+
+    .progress {
+      background: #e39301;
+    }
+
+    .cover h3 {
+      margin: 30px 0 0;
+      color: #fff;
+      text-align: center;
+      font-size: 25px;
+
+      line-height: normal;
+    }
+
+    .slide::after {
+      content: none;
+    }
+    .slide a {
+      color: #e39301;
+    }
+
+    .caption p {
+      color: #fff;
+    }
+
+    .slide li, ul {
+      line-height: 1.2em;
+    }
+
+    .slide li + li, ul + ul {
+      padding-top: 15px;
+    }
+
+    .slide li ul {
+      padding-top: 10px;
+    }
+
+    .slide li ol {
+      padding-top: 10px;
+    }
+
+    .slide li ul.text_after {
+      padding-bottom: 10px;
+    }
+
+    .slide ul li + li {
+      padding-top: 7px;
+    }
+
+    .slide ul li + pre {
+      padding-top: 7px;
+    }
+
+    .slide ol li + pre {
+      padding-top: 7px;
+    }
+
+    .slide pre code {
+      line-height: 1.5;
+      font-size: 20px;
+    }
+
+    .slide pre.indent {
+      padding-left: 40px;
+    }
+
+    .cover h2 {
+      margin: 30px 0 0;
+      color: #fff;
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .slide .cover {
+      max-height: unset;
+      opacity: 0.15;
+    }
+
+    .cover p {
+      margin-top: 30px;
+      text-align: center;
+      color :#fff;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    .badge {
+      text-align: center;
+    }
+
+    .badge a {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  </style>
+
+</head>
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Unterprogramme</h1>
+    <p>Fachdidaktik Programmieren, Algorithmen & Datenstrukturen</p>
+  </header>
+
+  <section class="slide cover">
+    <h3>Fachdidaktik Programmieren,<br>Algorithmen & Datenstrukturen</h3>
+    <h2>Unterprogramme</h2>
+    <figure>
+      <img class="cover" src="pictures/cover.jpg" alt="Suche">
+    </figure>
+  </section>  
+
+  <section class="slide">
+    <h2>Was werden wir in den nächsten 10 Minuten machen?</h2>
+    <ol>
+      <li class="next">Überblick – Worum geht es?</li>
+      <li class="next">Was bisher geschah … – Welches Vorwissen ist bereits vorhanden?</li>
+      <li class="next">Konzept – Was ist die Grundidee?</li>
+      <li class="next">Let’s get ready to rumble – Wie schaut die Einheit konkret aus?</li>
+      <li class="next">Methodenwahl – Warum diese Inhalte und Methoden?</li>
+      <li class="next">Ausblick – Wie könnte es weitergehen?</li>
+      <li class="next">Diskussion und Feedback – Was denkt ihr?</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>Überblick – Worum geht es?</h2>
+    <ol>
+      <li class="next"><i>Strukturierte Programmierung</i> als Programmierparadigma</li>
+
+      <li class="next"> Verwendung von
+        <ul>
+          <li><i>Kontrollstrukturen </i> (<i>Sequenzen</i>, <i>Verzweigungen</i> und <i>Schleifen</i>) sowie</li>
+          <li><i>Unterprogrammen</i> (<i>Funktionen</i>, <i>Prozeduren</i>, <i>Methoden</i>, etc.)</i></li>
+        </ul>
+      </li>
+
+      <li class="next"><i>Abstraktion</i> als Trennung zwischen Konzept und Umsetzung</li>
+
+      <li class="next">Komplexität eines Problems wird durch
+          <ul class="text_after">
+            <li><i>Prozess-</i> und </li>
+            <li><i>Datenabstraktion</i></li>
+          </ul>
+
+          reduziert.
+      </li>
+
+      <li class="next"><i>EVA-Prinzip</i> – Eingabe, Verarbeitung und Ausgabe – als Grundprinzip der Datenverarbeitung</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>Was bisher geschah … – Welches Vorwissen ist bereits vorhanden?</h2>
+
+    <ol>
+      <li class="next">Grundlegende (<i>Python</i>-)Programmierkenntnisse über
+
+        <ul class="text_after">
+          <li>Programmstruktur</li>
+          <li>Basis Datentypen, Operatoren und Ausdrücke</li>
+          <li>Kommandozeilen-Ein- und Ausgabe</li>
+          <li>Kontrollstrukturen</li>
+          <li>Komplexe Datentypen</li>
+        </ul>
+
+        sind vorhanden</li>
+
+      <li class="next"><i>Codeblock-"Framework"</i> zur Abstraktion komplexerer Programmsequenzen kann importiert und adäquat eingesetzt werden</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>Konzept – Was ist die Grundidee?</h2>
+    <ol>
+      <li class="next"><i>Sozialform</i>: Wer arbeitet mit wem zusammen?
+        <ul>
+          <li>SuS arbeiten in 3er-oder 4er-Gruppen im Raum verteilt</li>
+        </ul>
+      </li>
+
+      <li class="next"><i>Arbeitsform</i>: Welche Handlungsmuster sollen ausgeführt werden?
+          <ul>
+            <li>SuS lösen einen ihnen zugewiesenen Arbeitsauftrag durch "Programmieren" eines (eigenständigen) Unterprogramms</li>
+            <li>Code wird
+            <ol>
+              <li>mit realen, vorgefertigten Python-Codeblöcken "entwicklet"</li>
+              <li>in Python implementiert und getestet</li>
+            </ol>
+          </ul>
+      </li>
+    </ol>
+  </section>
+
+
+  <section class="slide">
+    <h2>Konzept – Was ist die Grundidee?</h2>
+    <ol>
+      <li>Welche Unterprogramme sollen geschrieben werden?
+        <ul>
+          <li>Geburtsdaten einlesen (<i>Dateneingabe</i>)</li>
+          <li>Geburtstage aufsteigend nach Monat und Tag sortieren (<i>Verarbeitung</i>)</li>
+          <li>Geburtstagskalender ausgeben (<i>Datenausgabe</i>)</li>
+        </ul>
+      </li>
+
+      <li class="next">Wie kommt eine 3er- oder 4er-Gruppe zustande?
+          <ul>
+            <li>Keine Separation nach Interessen oder sozialen Vorlieben</li>
+            <li>Gruppenauswahl erfolgt zufällig</li>
+          </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>Let’s get ready to rumble – Wie schaut die Einheit konkret aus?</h2>
+    <ol>
+      <li class="next">Vorbereitungen: Was unmittelbar vor der Einheit zu tun ist …
+        <ul>
+          <li>Zurechtrücken der Tische, auflegen der Python-Codeblöcke</li>
+          <li>Vorbereiten der Arbeitsaufträge</li>
+        </ul>
+      </li>
+
+      <li class="next">Stundenbeginn: Was am Anfang der Stunde passieren (sollte) …
+        <ul>
+          <li>Motivieren der SuS durch eine Vorführung des fertigen Programms</li>
+          <li>Erklärung des Arbeitsauftrags</li>
+          <li>Einteilung der SuS in 3er- und 4er-Gruppen</li>
+        </ul>
+      </li>
+
+      <li class="next">„Coaching-Phase“: Unterstützen der SuS bei Schwierigkeiten</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>Methodenwahl – Warum diese Inhalte und Methoden?</h2>
+    <ol>
+      <li class="next">Behaviorismus: Lernumgebung und positive Verstärkung 
+        <ul>
+          <li>Gruppenarbeit bietet angenehme Lernumgebung</li>
+          <li>Positive Verstärkung durch Lösen einer kompakten Aufgabe</li>
+        </ul>
+      </li>
+
+      <li class="next">Kognitivismus: Strukturierte Darstellung und Anknüpfung an Wissen
+        <ul>
+          <li>Strukturierte Darstellung des Codes durch reale Python-Codeblöcke</li>
+          <li>Unwissen über noch nicht bekannte Funktionen und Spracheigenschaften wird durch Codeblock-"Framework" kompensiert</li>
+        </ul>
+      </li>
+
+      <li class="next">Konstruktivismus: Wirklichkeitsnahes Lernen und aktive Auseinandersetzung
+        <ul>
+          <li>Durch das Erarbeiten der realitätsnahen Aufgabenstellungen erfolgt das Lernen wirklichkeitsnah</li>
+          <li>Aktive, handlungsorientierte Auseinandersetzung mit Stoff</li>
+        </ul>
+      </li>
+      </li>
+    </ol>
+  </section>
+  
+  <section class="slide">
+    <h2>Ausblick – Wie wird es weitergehen?</h2>
+    <ol>
+      <li class="next">Zusammenführen der einzelnen Unterprogramme zu einem lauffähigen Programm 
+        <ul>
+          <li>Als Gruppenarbeit in nächster Einheit</li>
+        </ul>
+      </li>
+
+      <li class="next">Erweitern des Geburtstagskalenders durch entwerfen weiterer Funktionen
+        <ul>
+          <li>Als Hausübung mit Arbeitsaufträgen</li>
+        </ul>
+      </li>
+
+      <li class="next">Vertiefung des Themas der Parameterübergabe 
+        <ul>
+          <li>Als Gruppenarbeit in nächster Einheit</li>
+          <li>Als Referat im Pool „Programmieren“</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout shrink">Was denkt ihr? 😉</h2>  
+  </section>
+
+  <footer class="badge">
+    <a href="https://antstei.github.io/teaching/FdPAD">antstei.github.io/teaching</a>
+  </footer>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+</body>
+</html>
